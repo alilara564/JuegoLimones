@@ -105,6 +105,10 @@ function detectarPiso() {
         mostrarEnSpan("txtVidas", vidas);
         aparecerLimon();
     }
+    if (vidas <= 0) {
+        clearInterval(myInterval);
+        alert("¡Juego terminado! Tu puntaje final es: " + puntaje);
+    }
 }
 
 function reiniciar(){
