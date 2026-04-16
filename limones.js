@@ -53,7 +53,7 @@ function dibujarPersonaje() {
 }
 
 function dibujarLimon(){
-    ctx.fillStyle = "green";
+    ctx.fillStyle = color_verde;
     ctx.fillRect(limonX, limonY, ANCHO_LIMON, ALTURA_LIMON);
 }
 
