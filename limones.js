@@ -98,7 +98,7 @@ function detectarColision() {
             myInterval = setInterval(bajarLimon, tiempoEnMilisegundos);
         }
         if(puntaje == 12){
-            alert("¡Ganaste! Tu puntaje final es: " + puntaje);
+            alert("¡Ganaste! Tu puntaje final es: " + puntaje + "ya tienes los limones suficientes para hacer un buen pye de limon :D");
             clearInterval(myInterval);
             mostrarEnSpan("mensaje", "GANASTE", color_verde);
         }
