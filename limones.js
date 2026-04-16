@@ -18,8 +18,11 @@ let limonY = 0;
 let puntaje = 0;
 let vidas = 3;
 
-let tiempoEnMilisegundos = 150;
+let tiempoEnMilisegundos = 170;
 let myInterval;
+
+let color_rojo = "#ff3b30";
+let color_verde = "#34c759";
 
 
 function iniciar() {
@@ -34,8 +37,9 @@ function iniciarJuego() {
     myInterval = setInterval(bajarLimon, tiempoEnMilisegundos);
     puntaje = 0;
     vidas = 3;
-    mostrarEnSpan("txtPuntaje", puntaje);
-    mostrarEnSpan("txtVidas", vidas);
+    mostrarEnSpan("txtPuntaje", puntaje,"black");
+    mostrarEnSpan("txtVidas", vidas,"black");
+    mostrarEnSpan("mensaje", "GO!!");
 }
 
 function dibujarSuelo() {
@@ -80,6 +84,24 @@ function detectarColision() {
         aparecerLimon();
         puntaje += 1;
         mostrarEnSpan("txtPuntaje", puntaje);
+
+        if(puntaje == 3){
+            tiempoEnMilisegundos = 150;
+            myInterval = setInterval(bajarLimon, tiempoEnMilisegundos);
+        }
+        if(puntaje == 6){
+            tiempoEnMilisegundos = 100;
+            myInterval = setInterval(bajarLimon, tiempoEnMilisegundos);
+        }
+        if(puntaje == 9){
+            tiempoEnMilisegundos = 50;
+            myInterval = setInterval(bajarLimon, tiempoEnMilisegundos);
+        }
+        if(puntaje == 12){
+            alert("¡Ganaste! Tu puntaje final es: " + puntaje);
+            clearInterval(myInterval);
+            mostrarEnSpan("mensaje", "GANASTE", color_verde);
+        }
     }
 }
 
@@ -106,8 +128,9 @@ function detectarPiso() {
         aparecerLimon();
     }
     if (vidas <= 0) {
-        clearInterval(myInterval);
         alert("¡Juego terminado! Tu puntaje final es: " + puntaje);
+        clearInterval(myInterval);
+        mostrarEnSpan("mensaje", "GAME OVER", color_rojo);
     }
 }
 
@@ -115,3 +138,8 @@ function reiniciar(){
     clearInterval(myInterval);
     iniciar();
 }
+
+let inputs = document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") moverIzquierda();
+    if (event.key === "ArrowRight") moverDerecha();
+});

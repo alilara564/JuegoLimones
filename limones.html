@@ -7,17 +7,18 @@
 
     <canvas id ="areaJuego" width="800" height="600"></canvas>
 
+    <div id = "mensaje"> GANASTE </div>
+
     <div class="contenedor">
+        
+        <div class="botones">
+            <button class="izquierda" onclick="moverIzquierda()">Izquierda</button>
+            <button class="derecha" onclick="moverDerecha()">Derecha</button>
+            <button class="reiniciar" onclick="reiniciar()">Reiniciar</button>
+        </div>
         <div class="panel">
             <p>Puntaje: <span id="txtPuntaje">0</span></p>
             <p>Vidas: <span id="txtVidas">3</span></p>
-        </div>
-
-        <div class="botones">
-            <button onclick="moverIzquierda()">Izquierda</button>
-            <button onclick="moverDerecha()">Derecha</button>
-            <button onclick="bajarLimon()">Bajar Limon</button>
-            <button onclick="reiniciar()">Reiniciar</button>
         </div>
     </div>
 

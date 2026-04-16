@@ -7,7 +7,8 @@ function generarAleatorio(min,max){
 }
 
 
-function mostrarEnSpan(idSpan,valor){
+function mostrarEnSpan(idSpan,valor,color = "white"){
     let componente=document.getElementById(idSpan);
     componente.textContent=valor;
+    componente.style.color=color;
 }

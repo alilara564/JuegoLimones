@@ -1,10 +1,12 @@
-body{
+body {
     zoom: 50%;
-    background-color: lightslategray;
+    background: linear-gradient(135deg, #1e725a, #2a5298);
+    font-family: 'Press Start 2P', cursive;
 }
 
+
 canvas{
-    background-color: rgba(255, 255, 255, 0.048);
+    background: linear-gradient( 135deg, #ffae434a, #4f81ff5c);
     backdrop-filter: blur(5px);
     display: block;
     margin: 20px auto;
@@ -12,24 +14,102 @@ canvas{
     border: 2px solid rgba(0, 0, 0, 0.588);
 }
 
-.contenedor{
+.contenedor {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 15px; /* separación entre elementos */
+    margin: 10px;
+    margin-left: 700px;
+    margin-right: 700px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    box-shadow: inset 0 1px 3px rgba(255,255,255,0.3);
 }
 
-.panel{
-    background-color: rgba(255, 255, 255, 0.048);
-    backdrop-filter: blur(5px);
-    padding: 20px;
+
+button {
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 12px 28px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Botón Izquierda */
+button.izquierda {
+    background: linear-gradient(135deg, #34c759, #28a745); /* verde iOS */
+}
+button.izquierda:active {
+    background: #248a3d;
+    transform: scale(0.97);
+}
+
+/* Botón Derecha */
+button.derecha {
+    background: linear-gradient(135deg, #0a84ff, #007aff); /* azul iOS */
+}
+button.derecha:active {
+    background: #0056b3;
+    transform: scale(0.97);
+}
+
+/* Botón Reiniciar */
+button.reiniciar {
+    background: linear-gradient(135deg, #ff3b30, #dc3545); /* rojo iOS */
+}
+button.reiniciar:active {
+    background: #c82333;
+    transform: scale(0.97);
+}
+
+
+
+
+.panel {
+    background: rgba(255, 255, 255, 0); /* translúcido */
+    backdrop-filter: blur(12px); /* efecto vidrio */
     border-radius: 20px;
-    border: 2px solid rgba(0, 0, 0, 0.588);
+    padding: 20px;
+    margin: 15px;
     text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1c1c1e; /* gris oscuro típico de iOS */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* sombra suave */
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-.botones{
+
+.panel:hover {
+    transform: scale(1.05); /* efecto al pasar el mouse */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+#mensaje{
+    background:linear-gradient(135deg, #12ffc81a, #2d83fb29);
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 800px;
+    margin-right: 800px;
+    border-radius: 20px;
+    font-size: 50px;
+    color: rgb(0, 255, 76);
+    border: 1px solid rgba(255,255,255,0.3);
+    text-shadow: 2px 2px 8px black;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+#mensaje:hover{
+    transform: scale(1.05); /* efecto al pasar el mouse */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
 }
