@@ -1,0 +1,35 @@
+body{
+    zoom: 50%;
+    background-color: lightslategray;
+}
+
+canvas{
+    background-color: rgba(255, 255, 255, 0.048);
+    backdrop-filter: blur(5px);
+    display: block;
+    margin: 20px auto;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.588);
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel{
+    background-color: rgba(255, 255, 255, 0.048);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.588);
+    text-align: center;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
