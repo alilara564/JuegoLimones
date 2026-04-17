@@ -85,23 +85,27 @@ function detectarColision() {
         puntaje += 1;
         mostrarEnSpan("txtPuntaje", puntaje);
 
-        if(puntaje == 3){
-            tiempoEnMilisegundos = 150;
-            myInterval = setInterval(bajarLimon, tiempoEnMilisegundos);
-        }
-        if(puntaje == 6){
-            tiempoEnMilisegundos = 100;
-            myInterval = setInterval(bajarLimon, tiempoEnMilisegundos);
-        }
-        if(puntaje == 9){
-            tiempoEnMilisegundos = 50;
-            myInterval = setInterval(bajarLimon, tiempoEnMilisegundos);
-        }
-        if(puntaje == 12){
-            alert("¡Ganaste! Tu puntaje final es: " + puntaje + "ya tienes los limones suficientes para hacer un buen pye de limon :D");
-            clearInterval(myInterval);
-            mostrarEnSpan("mensaje", "GANASTE", color_verde);
-        }
+        if (vidas > 0){
+            if(puntaje == 3){
+                tiempoEnMilisegundos = 150;
+                myInterval = setInterval(bajarLimon, tiempoEnMilisegundos);
+            }
+            if(puntaje == 6){
+                tiempoEnMilisegundos = 100;
+                myInterval = setInterval(bajarLimon, tiempoEnMilisegundos);
+            }
+            if(puntaje == 9){
+                tiempoEnMilisegundos = 50;
+                myInterval = setInterval(bajarLimon, tiempoEnMilisegundos);
+            }
+            if(puntaje == 12 || vidas == 0){
+                clearInterval(myInterval);
+                mostrarEnSpan("mensaje", "GANASTE", color_verde);
+
+                alert("¡Ganaste! Tu puntaje final es: " + puntaje + " ya tienes los limones suficientes para hacer un buen pye de limon :D");
+            }
+
+         }
     }
 }
 
@@ -128,9 +132,9 @@ function detectarPiso() {
         aparecerLimon();
     }
     if (vidas <= 0) {
-        alert("¡Juego terminado! Tu puntaje final es: " + puntaje);
         clearInterval(myInterval);
         mostrarEnSpan("mensaje", "GAME OVER", color_rojo);
+        alert("¡Juego terminado! Tu puntaje final es: " + puntaje);
     }
 }
 
